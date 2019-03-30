@@ -1,6 +1,6 @@
 frame_skip = 100 # analyze every 100 frames to cut down on Rekognition API calls
 
-import predict.py #load in predict.py
+
 import boto3
 import cv2
 from PIL import Image

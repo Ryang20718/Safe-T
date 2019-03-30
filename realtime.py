@@ -2,6 +2,7 @@ import cv2
 import sys
 from PIL import Image
 import io
+import predict.py #load in predict.py
 
 frame_skip = 100
 
