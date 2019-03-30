@@ -2,9 +2,9 @@ import cv2
 import sys
 from PIL import Image
 import io
-import predict.py #load in predict.py
+import predict #load in predict.py
 
-frame_skip = 100
+frame_skip = 1000
 
 cascPath = "haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascPath)
@@ -16,13 +16,16 @@ while True:
     
     # Capture frame-by-frame
     ret, frame = video_capture.read()
-    
+
     if cur_frame % frame_skip == 0: # only analyze every n frames
         pil_img = Image.fromarray(frame) # convert opencv frame (with type()==numpy) into PIL Image
         stream = io.BytesIO()
         pil_img.save(stream, format='JPEG') # convert PIL Image to Bytes
         bin_img = stream.getvalue()
-
+        
+        response = predict.get_prediction(bin_img)
+        print(response)
+        
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
         faces = faceCascade.detectMultiScale(
