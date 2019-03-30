@@ -1,9 +1,16 @@
+import os
 import sys
 
 from google.cloud import automl_v1beta1
 from google.cloud.automl_v1beta1.proto import service_pb2
 
+print('Credendtials from environ: {}'.format(
+    os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')))
 
+
+
+# project id cs131-1552025416924 
+# model id ICN6390988586782325408
 def get_prediction(content, project_id, model_id):
   prediction_client = automl_v1beta1.PredictionServiceClient()
 
