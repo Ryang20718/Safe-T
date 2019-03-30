@@ -4,8 +4,8 @@ import sys
 from google.cloud import automl_v1beta1
 from google.cloud.automl_v1beta1.proto import service_pb2
 
-print('Credendtials from environ: {}'.format(
-    os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')))
+#print('Credendtials from environ: {}'.format(
+    #os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')))
 
 
 
