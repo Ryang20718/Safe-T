@@ -3,16 +3,19 @@ import sys
 from PIL import Image
 import io
 import predict #load in predict.py
+import json
 
-frame_skip = 1000
+frame_skip = 800
 
 cascPath = "haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascPath)
 
 video_capture = cv2.VideoCapture(0)
-
+loop = True
 cur_frame = 0
-while True:
+success = 0
+
+while loop:
     
     # Capture frame-by-frame
     ret, frame = video_capture.read()
@@ -24,7 +27,13 @@ while True:
         bin_img = stream.getvalue()
         
         response = predict.get_prediction(bin_img)
-        print(response)
+        for i in response.payload:
+            print i.display_name
+            if(i.classification.score > 0.3 or i.display_name == "ryan"):
+                # success so unlock bluetooth
+                print "Successfully unlocked"
+                success += 1
+                if success >= 4: loop = False
         
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
