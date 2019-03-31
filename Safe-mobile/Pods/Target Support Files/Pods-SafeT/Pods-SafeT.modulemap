@@ -1,0 +1,6 @@
+framework module Pods_SafeT {
+  umbrella header "Pods-SafeT-umbrella.h"
+
+  export *
+  module * { export * }
+}
