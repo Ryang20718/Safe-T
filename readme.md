@@ -6,6 +6,8 @@
 
 - Face recognition to allow users to unlock/lock their vehicles via bluetooth low energy.
 
+- Google maps API and LA dataset allows users to see road conditions and whether they want to ride their electric vehicle there
+
 ### Setup
 - First export path to cred.json file 
 e.g export GOOGLE_APPLICATION_CREDENTIALS='/Users/ryanyang/Desktop/Unlocked/cred.json'
