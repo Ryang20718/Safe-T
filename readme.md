@@ -4,7 +4,7 @@
 
 - Python predict generates a rating out of 1 based on it's prediction.
 
-- Face recognition to allow users to unlock/lock their vehicles.
+- Face recognition to allow users to unlock/lock their vehicles via bluetooth low energy.
 
 ### Setup
 - First export path to cred.json file 
