@@ -72,7 +72,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         let lat = String(ownLat)
         let long = String(ownLong)
         
-        let urlSTR = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=AIzaSyBO8RppEC_eIk5jKhW541jD1k7i8MUMb_4"
+        let urlSTR = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=apikey"
         let url = URL(string: urlSTR)
         URLSession.shared.dataTask(with:url!, completionHandler: {(data, response, error) in
             guard let data = data, error == nil else { return }
@@ -91,7 +91,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                                     let newJSON = JSON(json)
                                     let roadNum = "\(newJSON[0]["pci"])"
 
-                                    let distURL = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=34.070349,-118.446470&destinations=" + lat + "," + long + "&key=AIzaSyBO8RppEC_eIk5jKhW541jD1k7i8MUMb_4"
+                                    let distURL = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=34.070349,-118.446470&destinations=" + lat + "," + long + "&key=apikey"
                                     Alamofire.request(distURL).responseJSON { response in
                                         if let json = response.result.value{
                                             let newJSON = JSON(json)
@@ -302,7 +302,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         let lat = String(latitude)
         let long = String(longitude)
         
-        let urlSTR = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=AIzaSyBO8RppEC_eIk5jKhW541jD1k7i8MUMb_4"
+        let urlSTR = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=apikey"
         let url = URL(string: urlSTR)
         URLSession.shared.dataTask(with:url!, completionHandler: {(data, response, error) in
             guard let data = data, error == nil else { return }
@@ -322,7 +322,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                                     let newJSON = JSON(json)
                                     let roadNum = "\(newJSON[0]["pci"])"
                                     
-                                    let distURL = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=34.069933,-118.451254&destinations=" + lat + "," + long + "&key=AIzaSyBO8RppEC_eIk5jKhW541jD1k7i8MUMb_4"
+                                    let distURL = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=34.069933,-118.451254&destinations=" + lat + "," + long + "&key=apikey"
                                     Alamofire.request(distURL).responseJSON { response in
                                         if let json = response.result.value{
                                             let newJSON = JSON(json)
