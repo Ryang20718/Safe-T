@@ -14,7 +14,7 @@ from google.cloud.automl_v1beta1.proto import service_pb2
 def get_prediction(content):
   prediction_client = automl_v1beta1.PredictionServiceClient()
 
-  name = 'projects/{}/locations/us-central1/models/{}'.format("cs131-1552025416924" , "ICN6390988586782325408")
+  name = 'projects/{}/locations/us-central1/models/{}'.format("cs131-1552025416924" , "ICN4441192999165309033")
   payload = {'image': {'image_bytes': content }}
   params = {}
   request = prediction_client.predict(name, payload, params)
