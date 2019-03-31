@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "noble": "^1.9.1",
     "node-bluetooth": "^1.2.5",
     "node-gyp": "^3.8.0",
     "request": "^2.88.0"
