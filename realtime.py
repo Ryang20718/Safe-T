@@ -5,7 +5,7 @@ import io
 import predict #load in predict.py
 import json
 
-frame_skip = 800
+frame_skip = 500
 
 cascPath = "haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascPath)
